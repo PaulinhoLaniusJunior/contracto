@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/styleService.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script defer src="../js/servicesScript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <title>Contracto - Serviços</title>
+</head>
+<body>
+    <header>
+        <a href="../pages/home.html" class="logo">Contracto</a>   
+    </header>
+
+    <section class="services">
+        <div class="buttons">
+            <button id="addContractBtn" class="btn">Adicionar Contrato</button>
+        </div>
+    
+        <!-- Área para exibir e editar o contrato -->
+        <div id="contractEditor" class="contract-editor" style="display:none;">
+            <h2>Editar Contrato</h2>
+            <textarea id="contractContent" placeholder="O conteúdo do contrato será exibido aqui..." rows="10"></textarea>
+            <button id="saveContractBtn" class="btn">Salvar no Histórico</button>
+        </div>
+    
+        <!-- Histórico de contratos -->
+        <div id="contractHistory" class="contract-history">
+            <h2>Histórico de Contratos</h2>
+            <ul id="contractList"></ul>
+        </div>
+        <!-- Tela de Assinatura -->
+        <div id="signatureModal" class="signature-modal" style="display:none;">
+             <div class="signature-container">
+        <h2>Desenhe sua Assinatura</h2>
+        <canvas id="signaturePad" width="500" height="200" style="border: 1px solid #ccc;"></canvas>
+        <div class="signature-actions">
+            <button id="clearSignature" class="btn">Limpar</button>
+            <button id="saveSignature" class="btn">Posicionar Assinatura</button>
+        </div>
+    </div>
+</div>
+<!-- Tela de Posicionamento de Assinatura -->
+<div id="signaturePositioningModal" class="signature-modal" style="display:none;">
+    <div class="signature-container">
+        <h2>Posicione sua Assinatura</h2>
+        <div id="pdfViewer" style="position: relative; width: 100%; height: 500px; border: 1px solid #ccc;">
+            <canvas id="pdfCanvas" style="width: 100%; height: 100%;"></canvas>
+            <img id="signatureImage" src="" style="position: absolute; top: 0; left: 0; cursor: move; display: none;">
+        </div>
+        <div class="signature-actions">
+            <button id="savePositionedSignature" class="btn">Salvar Assinatura</button>
+            <button id="cancelPositioning" class="btn">Cancelar</button>
+        </div>
+    </div>
+</div>
+        <!-- Área para visualizar o contrato -->
+        <div id="contractViewer" class="contract-viewer" style="display:none;">
+            <h2>Visualizar Contrato</h2>
+            <iframe id="contractIframe" style="width:100%; height:500px;" frameborder="0"></iframe>
+            <button id="closeViewerBtn" class="btn">Fechar</button>
+        </div>
+    </section>
+    
+    <!-- Input oculto para selecionar arquivo -->
+    <input type="file" id="contractFileInput" accept=".pdf,.docx,.txt" style="display:none;">
+</body>
+</html>

@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Contracto - Login</title>
+    <link rel="stylesheet" href="../css/styleLogin.css">
     <script defer src="../js/login.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container sign-in-container">
+
+    <div class="left-side">
+        <div class="form-content">
+            <div class="logo">
+                <h1>Contracto<span>#</span></h1>
+            </div>
+            <p>Não tem uma conta? <a href="register.html">Crie uma aqui</a></p> <!-- Novo parágrafo adicionado aqui -->
             <form id="loginForm">
-                <h1>Entrar</h1>
-                <span>ou use sua conta de email</span>
-                <input type="email" id="login_email" placeholder="Email" required />
-                <input type="password" id="login_password" placeholder="Senha" required />
-                <a href="#">Esqueceu sua senha?</a>
+                <div class="input-group">
+                    <label for="login_email">Usuário</label>
+                    <input type="text" id="login_email" placeholder="Usuário" required />
+                </div>
+                <div class="input-group">
+                    <label for="login_password">Senha</label>
+                    <input type="password" id="login_password" placeholder="Senha" required />
+                </div>
                 <button type="submit">Entrar</button>
-                <p>Não tem conta? <a href="register.html">Registre-se</a></p>
-                <div id="login_message" style="color: red;"></div> <!-- Adicionado -->
+                <a href="#">Esqueceu sua senha?</a>
             </form>
         </div>
     </div>
+    <div class="right-side"></div>
 </body>
 </html>
